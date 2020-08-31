@@ -1,5 +1,11 @@
 include ../../core/svg
 
 mixin footer(data)
-  footer.footer Footer
-    .footer__test= data.test
+  footer.footer
+    .footer__container
+      .footer__copyright= data.copyright
+      .footer__social-box
+        each item in data.social
+          a.footer__social(href=item.href)
+            +svg(item.icon)
+      .footer__lang

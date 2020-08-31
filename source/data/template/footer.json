@@ -1,3 +1,25 @@
 {
-  "test": "test"
+  "copyright": "SolarGroup © 2020. Все права защищены.",
+  "social": [
+    {
+      "href": "#",
+      "icon": "twitter"
+    },
+    {
+      "href": "#",
+      "icon": "youtube"
+    },
+    {
+      "href": "#",
+      "icon": "fb"
+    },
+    {
+      "href": "#",
+      "icon": "vk"
+    },
+    {
+      "href": "#",
+      "icon": "instagram"
+    }
+  ]
 }

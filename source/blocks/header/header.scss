@@ -2,4 +2,20 @@ $parent: header;
 
 @include block($parent) {
   width: 100%;
+
+  @include element($parent, 'container') {
+    display: flex;
+    padding: 0 rem(15);
+  }
+
+  @include element($parent, 'logo') {
+    svg {
+      width: rem(190);
+      height: rem(32);
+    }
+  }
+
+  @include element($parent, 'nav') {
+    display: none;
+  }
 }

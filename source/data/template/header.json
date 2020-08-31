@@ -1,3 +1,42 @@
 {
-  "test": "test"
+  "nav": [
+    {
+      "href": "#",
+      "text": "Ценности клуба"
+    },
+    {
+      "href": "#",
+      "text": "Менторы"
+    },
+    {
+      "href": "#",
+      "text": "Мероприятия"
+    },
+    {
+      "href": "#",
+      "text": "Условия"
+    }
+  ],
+  "social": [
+    {
+      "href": "#",
+      "icon": "twitter"
+    },
+    {
+      "href": "#",
+      "icon": "youtube"
+    },
+    {
+      "href": "#",
+      "icon": "fb"
+    },
+    {
+      "href": "#",
+      "icon": "vk"
+    },
+    {
+      "href": "#",
+      "icon": "instagram"
+    }
+  ]
 }

@@ -1,5 +1,15 @@
 include ../../core/svg
 
 mixin header(data)
-  header.header Header
-    .header__test= data.test
+  header.header
+    .header__container
+      .header__logo
+        +svg('logo')
+      .header__nav
+        each item in data.nav
+          a.header__nav-link(href=item.href)= item.text
+      .header__social-box
+        each item in data.social
+          a.header__social(href=item.href)
+            +svg(item.icon)
+      .header__lang
