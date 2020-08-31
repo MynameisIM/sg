@@ -1,0 +1,166 @@
+@function rem($size) {
+  $remsize: $size / 16;
+
+  @return #{$remsize}rem;
+}
+
+@mixin block($parent) {
+  .#{$parent} {
+    @content;
+  }
+}
+
+@mixin element($parent, $name) {
+  .#{$parent}__#{$name} {
+    @content;
+  }
+}
+
+@mixin element-next($parent, $name) {
+  + .#{$parent}__#{$name} {
+    @content;
+  }
+}
+
+@mixin modifier($parent, $name) {
+  $length_check: str-length('#{$parent}') + 1;
+
+  /* stylelint-disable */
+  @if ($length_check == str-length('#{&}')) {
+    $subQuery: $parent;
+
+    @at-root &.#{$subQuery}--#{$name} {
+      @content;
+    }
+  } @else {
+    $length: str-length('.#{$parent} ');
+    $subQuery: str-slice('#{&}', $length + 1);
+    $query: '#{&}#{$subQuery}--#{$name}';
+
+    @at-root #{$query} {
+      @content;
+    }
+  }
+  /* stylelint-enable */
+}
+
+@mixin element-tag($tag, $parent, $name) {
+  @at-root {
+    .#{$parent} #{$tag}.#{$parent}__#{$name} {
+      @content;
+    }
+  }
+}
+
+@mixin fs($size, $lh: false, $weight: false) {
+  @if ($size) {
+    font-size: rem($size);
+  }
+
+  @if ($lh) {
+    line-height: $lh;
+  }
+
+  @if ($weight) {
+    font-weight: $weight;
+  }
+}
+
+@mixin flex($flex: flex, $align:false, $justify:false, $dir:false, $wrap: false) {
+  display: $flex;
+
+  @if ($align) {
+    align-items: $align;
+  }
+
+  @if ($justify) {
+    justify-content: $justify;
+  }
+
+  @if ($wrap) {
+    flex-wrap: $wrap;
+  }
+
+  @if ($dir) {
+    flex-direction: $dir;
+  }
+}
+
+@mixin flex-center($flex: flex, $dir:false, $wrap: false) {
+  display: $flex;
+  align-items: center;
+  justify-content: center;
+
+  @if ($wrap) {
+    flex-wrap: $wrap;
+  }
+
+  @if ($dir) {
+    flex-direction: $dir;
+  }
+}
+
+@mixin flexWidth($size, $fix: false) {
+  @if ($fix) {
+    $size: rem($size);
+  }
+
+  flex-basis: $size;
+  max-width: $size;
+}
+
+@mixin absoluteCover($pseudo: false, $bgColor: false, $opacity: false, $transition: false) {
+  @if ($pseudo) {
+    content: '';
+  }
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  @if ($bgColor) {
+    background-color: $bgColor;
+  }
+
+  @if ($opacity) {
+    opacity: $opacity;
+  }
+
+  @if ($transition) {
+    transition: $transition;
+  }
+
+  @content;
+}
+
+@mixin hover($pointer: false, $transition: false) {
+  @media (hover: hover), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @if ($pointer) {
+      cursor: pointer;
+    }
+
+    @if ($transition) {
+      transition: $transition;
+    }
+
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin mediaProp($prop, $args...) {
+  @each $bp, $value in keywords($args) {
+    @if ($bp == def) {
+      #{$prop}: $value;
+    }
+
+    @else {
+      @include min-media($bp) {
+        #{$prop}: $value;
+      }
+    }
+  }
+}

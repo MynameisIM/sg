@@ -1,0 +1,25 @@
+extends ../layouts/main.pug
+
+block vars
+  - var indexPage = require('../data/indexPage.json');
+
+block content
+  each part in indexPage.blocks
+    if (part.name === 'main')
+      +home-main(part.data)
+    if (part.name === 'couple')
+      +home-couple(part.data)(id='second-screen')
+    if (part.name === 'banner')
+      +banner(part.data)
+    if (part.name === 'slider')
+      +home-slider(part.data, true)
+    if (part.name === 'location')
+      +home-location(part.data)
+    if (part.name === 'sliderContent')
+      +home-slidable(part.data)
+    if (part.name === 'gallery')
+      +slider-gallery(part.data, true, true)
+    if (part.name === 'architecture')
+      +home-architecture(part.data)
+    if (part.name === 'contacts')
+      +home-contacts(part.data)

@@ -1,0 +1,94 @@
+$parent: popup-viewing;
+
+@include block($parent) {
+  max-width: 100%;
+  padding: rem(30) rem(15);
+  background-color: $white;
+  pointer-events: auto;
+  margin: rem(30) auto;
+
+  @include element($parent, 'title') {
+    text-align: center;
+    padding-bottom: rem(30);
+  }
+
+  @include element($parent, 'button') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include element($parent, 'privacy') {
+    padding: rem(5) 0 rem(30);
+    flex-basis: 100%;
+    max-width: 100%;
+
+    & label {
+      position: relative;
+      padding-left: rem(43);
+      color: $gray;
+
+      @include fs(15, 150%);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 2px;
+        height: rem(22);
+        width: rem(22);
+        border: 1px solid $gray;
+        transition: border-color 0.2s ease-in-out;
+      }
+
+      &:focus,
+      &:active,
+      &:hover {
+        &::before {
+          border-color: $green-m;
+        }
+      }
+
+      & a {
+        color: $green-m;
+
+        &:hover,
+        &:active,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    & input {
+      display: none;
+
+      &:checked + label {
+        &::before {
+          background-color: $green-m;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 2px;
+          height: rem(22);
+          width: rem(22);
+          background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNHB4JyBoZWlnaHQ9JzEwcHgnID4gPHBhdGggZmlsbC1ydWxlPSdldmVub2RkJyBmaWxsPSdyZ2IoMjU1LCAyNTUsIDI1NSknIGQ9J00xMi41MzQsLTAuMDExIEw0LjY4Nyw3LjI2NCBMMS40NzQsNC4yODYgTC0wLjAwMSw1LjY1NSBMNC42ODcsMTAuMDAyIEwxNC4wMTAsMS4zNTggTDEyLjUzNCwtMC4wMTEgWicvPiA8L3N2Zz4=') no-repeat 50%;
+        }
+      }
+    }
+
+    @include min-media(md) {
+      padding: rem(20) 0 rem(50);
+    }
+  }
+
+  @include min-media(sm) {
+    max-width: rem(450);
+    padding: rem(60);
+  }
+}

@@ -1,0 +1,16 @@
+include ../../../core/title/core-title
+include ../../../core/button/core-button
+
+mixin popup-viewing(data)
+  .popup-viewing
+    +core-title('h3', data.title, 'popup-viewing__title')
+    form.popup-viewing__form-block(action=data.form.action, method!=data.form.method, name=data.form.name)
+      each item in data.inputs
+        .popup-viewing__input-wrp.input-wrp
+          input.popup-viewing__input(type=item.type, name=item.name)
+          label.popup-viewing__input-label!=item.label
+      .popup-viewing__privacy
+        input(type='checkbox', id='privacy_checkbox', name='privacy', checked)
+        label(for='privacy_checkbox')!=data.privacy
+      .popup-viewing__button
+        +core-button('button', data.button, type=data.button.type)

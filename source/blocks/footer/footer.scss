@@ -1,0 +1,5 @@
+$parent: footer;
+
+@include block($parent) {
+  width: 100%;
+}

@@ -1,0 +1,46 @@
+include ../blocks/header/header.pug
+include ../blocks/footer/footer.pug
+
+-
+  loadAssets = function(file) {
+    const req = require.context(
+    "@/assets/",
+    true, // Load files recursively. Pass false to skip recursion.
+    /^\.\/.*\.(svg|jpg|png)$/ // Match files ending with .md.
+    );
+    if (file.indexOf('.svg') !== -1) {
+    return req(file).symbol;
+    }
+    return req(file);
+  }
+
+- var headerData = require('../data/template/header.json');
+- var footerData = require('../data/template/footer.json');
+
+block vars
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(href='./favicon.ico', rel='shortcut icon', type='image/x-icon')
+    title Festival Park
+    each css in htmlWebpackPlugin.files.css
+      link(rel='stylesheet', href=css)
+    if (htmlWebpackPlugin.files.extracted && htmlWebpackPlugin.files.extracted.css)
+      each css in htmlWebpackPlugin.files.extracted.css
+        link(rel='stylesheet', href=('../' + css.file), media=css.query)
+
+  body
+    .page
+      .page__wrap
+        if (headerData)
+          +header(headerData)
+        block content
+      if (footerData)
+        +footer(footerData)
+    +popup-layout
+
+    each js in htmlWebpackPlugin.files.js
+      script(type='text/javascript', src=js, async, defer)

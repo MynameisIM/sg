@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": [
+      true, {
+        "ignoreAtRules": ["if", "else", "extend", "mixin", "include", "content", "for", "function", "return", "at-root", "each"]
+      }
+    ],
+    "indentation": 2,
+    "font-family-no-missing-generic-family-keyword": null
+  }
+}

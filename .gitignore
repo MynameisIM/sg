@@ -1,0 +1,11 @@
+/package-lock.json
+/dist/
+/node_modules/
+/.idea/
+/.vscode/
+/htdocs/public/hot
+/htdocs/public/storage
+/htdocs/storage/*.key
+/htdocs/vendor
+/htdocs/.vagrant
+/htdocs/.env

@@ -1,0 +1,63 @@
+$parent: popup;
+
+@include block($parent) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  min-height: 100vh;
+  background-color: rgba($black, 0.9);
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1100;
+  opacity: 0;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+
+  @include modifier($parent, 'open') {
+    display: flex;
+    animation-play-state: running;
+    flex-direction: column;
+  }
+
+  @include element($parent, 'content-wrap') {
+    text-align: left;
+    min-height: 100%;
+    height: 100%;
+    position: relative;
+    pointer-events: none;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @include element($parent, 'close') {
+    height: rem(20);
+    width: rem(20);
+    color: $white;
+    position: absolute;
+    top: rem(30);
+    right: rem(30);
+    z-index: 3;
+    transition: none;
+    pointer-events: auto;
+
+    @include hover() {
+      color: $red;
+    }
+  }
+
+  @include element($parent, 'content') {
+    height: auto;
+  }
+
+  &#popup-image {
+    @include element($parent, 'content-wrap') {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

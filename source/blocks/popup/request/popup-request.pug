@@ -1,0 +1,17 @@
+include ../../../core/title/core-title
+include ../../../core/button/core-button
+
+mixin popup-request(data)
+  .popup-request
+    +core-title('h3', data.title, 'popup-request__title')
+    form.popup-request__form-block(action!=data.form.action, method!=data.form.method, name!=data.form.name)
+      each item in data.inputs
+        .popup-request__input-wrp.input-wrp
+          input.popup-request__input(type!=item.type, name!=item.name)
+          label.popup-request__input-label.input-label!=item.label
+      input(type='hidden', name='family-mortgage', value='false')
+      .popup-request__privacy
+        input(type='checkbox', id='privacy_checkbox', name='privacy', checked)
+        label(for='privacy_checkbox')!=data.privacy
+      .popup-request__button
+        +core-button('button', data.button, type=data.button.type)

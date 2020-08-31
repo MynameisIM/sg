@@ -1,0 +1,19 @@
+include ../../../core/title/core-title
+include ../../../core/button/core-button
+include ./block/popup-mortgage-block
+
+mixin popup-mortgage(data)
+  .popup-mortgage
+    +core-title('h3', data.title, 'popup-mortgage__title')
+    form.popup-mortgage__form-block(action=data.form.action, method!=data.form.method, name=data.form.name)
+      each item in data.inputs
+        .popup-mortgage__input-wrp.input-wrp
+          input.popup-mortgage__input(type=item.type, name=item.name)
+          label.popup-mortgage__input-label!=item.label
+      +popup-mortgage-block(data.filter, 'popup-mortgage__calc')
+      .popup-mortgage__privacy-wrp
+        .popup-mortgage__privacy
+          input(type='checkbox', id='privacy_checkbox_mortgage', name='privacy', checked)
+          label(for='privacy_checkbox_mortgage')!=data.privacy
+      .popup-mortgage__button
+        +core-button('button', data.button, type=data.button.type)

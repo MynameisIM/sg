@@ -1,0 +1,48 @@
+.input-wrp {
+  position: relative;
+  flex-basis: 100%;
+  max-width: 100%;
+  margin-bottom: rem(25);
+
+  & label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    color: $green-l;
+    transition: transform 0.2s linear, top 0.2s linear;
+    pointer-events: none;
+
+    @include fs(17, 150%);
+  }
+
+  &--focus {
+    & label {
+      top: rem(-15);
+      transform: translate(0, 0);
+    }
+  }
+
+  & input {
+    height: rem(50);
+    width: 100%;
+    border: none;
+    color: $black;
+    border-bottom: 1px solid $green-l;
+    transition: border-color 0.2s ease-in-out;
+
+    &.error {
+      border-bottom-color: $red;
+
+      & + label {
+        color: $red;
+      }
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: $green-d;
+    }
+  }
+}
