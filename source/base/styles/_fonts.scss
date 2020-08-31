@@ -1,19 +1,49 @@
 @font-face {
-  font-family: 'Circe';
+  font-family: 'BlissPro';
   src:
-    url('../../assets/fonts/Circe-Bold.woff2') format('woff2'),
-    url('../../assets/fonts/Circe-Bold.woff') format('woff');
-  font-weight: bold;
+    url('../../assets/fonts/BlissPro-ExtraBold.woff2') format('woff2'),
+    url('../../assets/fonts/BlissPro-ExtraBold.woff') format('woff');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Circe';
+  font-family: 'BlissPro';
   src:
-    url('../../assets/fonts/Circe-Regular.woff2') format('woff2'),
-    url('../../assets/fonts/Circe-Regular.woff') format('woff');
-  font-weight: normal;
+    url('../../assets/fonts/BlissPro-Heavy.woff2') format('woff2'),
+    url('../../assets/fonts/BlissPro-Heavy.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BlissPro';
+  src:
+    url('../../assets/fonts/BlissPro-Bold.woff2') format('woff2'),
+    url('../../assets/fonts/BlissPro-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BlissPro';
+  src:
+    url('../../assets/fonts/BlissPro-Medium.woff2') format('woff2'),
+    url('../../assets/fonts/BlissPro-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BlissPro';
+  src:
+    url('../../assets/fonts/BlissPro.woff2') format('woff2'),
+    url('../../assets/fonts/BlissPro.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

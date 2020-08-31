@@ -1,9 +1,0 @@
-include ../../../core/title/core-title
-include ../../../core/button/core-button
-
-mixin popup-success(data)
-  .popup-success
-    +core-title('h3', data.title, 'popup-success__title')
-    .popup-success__text!=data.text
-    .popup-success__button
-      +core-button('a', data.button)
