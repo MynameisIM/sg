@@ -35,12 +35,9 @@ html(lang='ru')
   body
     .page
       .page__wrap
-        if (headerData)
-          +header(headerData)
+        +header(headerData)
         block content
-      if (footerData)
-        +footer(footerData)
-    +popup-layout
+      +footer(footerData)
 
     each js in htmlWebpackPlugin.files.js
       script(type='text/javascript', src=js, async, defer)
