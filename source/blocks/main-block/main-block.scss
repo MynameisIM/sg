@@ -21,4 +21,88 @@ $parent: main-block;
     left: 0;
     object-fit: cover;
   }
+
+  @include element($parent, 'container') {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 rem(20);
+
+    @media (min-width: 768px) {
+      padding: 0 rem(50);
+    }
+  }
+
+  @include element($parent, 'title') {
+    font-weight: 900;
+    font-size: rem(32);
+    color: $white;
+    margin-bottom: rem(15);
+
+    @media (min-width: 768px) {
+      font-size: rem(64);
+      margin-bottom: rem(34);
+    }
+
+    @media (min-width: 1024px) {
+      width: 80%;
+      max-width: rem(1000);
+      font-size: rem(72);
+    }
+
+    @media (min-width: 1280px) {
+      letter-spacing: 0.7px;
+    }
+  }
+
+  @include element($parent, 'text') {
+    font-weight: 700;
+    font-size: rem(18);
+    color: $gray;
+    margin-bottom: rem(50);
+
+    @media (min-width: 768px) {
+      font-size: rem(24);
+      margin-bottom: rem(95);
+    }
+
+    @media (min-width: 1024px) {
+      width: 80%;
+      margin-bottom: rem(65);
+    }
+  }
+
+  @include element($parent, 'button') {
+    font-weight: 700;
+    font-size: rem(14);
+    color: $white;
+    text-transform: uppercase;
+    background-color: $blue;
+    border-radius: rem(25);
+    padding: rem(19) rem(45);
+    margin-bottom: rem(30);
+
+    @media (min-width: 768px) {
+      padding: rem(20) rem(45);
+      margin-bottom: rem(70);
+    }
+  }
+
+  @include element($parent, 'keyhole') {
+    position: absolute;
+    width: rem(24);
+    height: rem(40);
+    bottom: rem(48);
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('/assets/images/keyhole.png');
+
+    @media (min-width: 768px) {
+      bottom: rem(96);
+    }
+  }
 }
