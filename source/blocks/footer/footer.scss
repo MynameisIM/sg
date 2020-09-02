@@ -1,5 +1,123 @@
 $parent: footer;
 
 @include block($parent) {
+  position: absolute;
   width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  @include element($parent, 'container') {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: rem(25) rem(20);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      padding: rem(36) rem(38);
+    }
+
+    @media (min-width: 1024px) {
+      max-width: rem(1202);
+      padding: rem(34) rem(47);
+      margin: 0 auto;
+    }
+  }
+
+  @include element($parent, 'social-box') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: rem(25);
+
+    @media (min-width: 768px) {
+      position: relative;
+      padding-right: rem(15);
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 1024px) {
+      padding-right: rem(20);
+    }
+
+    @media (min-width: 1280px) {
+      padding-right: rem(30);
+    }
+
+    &::after {
+      @media (min-width: 768px) {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 120%;
+        background-color: $white;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @include element($parent, 'social') {
+    margin: 0 rem(12);
+
+    svg {
+      width: rem(25);
+      height: rem(25);
+    }
+
+    @media (min-width: 768px) {
+      margin: 0 rem(8);
+    }
+
+    @media (min-width: 1024px) {
+      margin: 0 rem(4);
+    }
+  }
+
+  @include element($parent, 'lang') {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: inline-flex;
+      align-items: center;
+      width: rem(50);
+      height: rem(16);
+      padding-left: rem(24);
+      background-size: 24px 16px;
+      background-repeat: no-repeat;
+      color: $white;
+      margin-left: rem(25);
+    }
+
+    @media (min-width: 1024px) {
+      margin-left: rem(23);
+    }
+
+    @media (min-width: 1280px) {
+      margin-left: rem(30);
+    }
+
+    @include modifier($parent, 'ru') {
+      background-image: url('/assets/images/flag-ru.jpg');
+    }
+
+    span {
+      font-weight: 700;
+      font-size: rem(14);
+      text-transform: uppercase;
+      padding-left: rem(5);
+    }
+  }
+
+  @include element($parent, 'copyright') {
+    font-size: rem(14);
+    color: $gray;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      font-size: rem(18);
+      margin-right: auto;
+    }
+  }
 }

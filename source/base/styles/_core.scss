@@ -109,12 +109,15 @@ p {
 }
 
 .page {
+  position: relative;
   flex: 1 0 auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: black;
 
   &__wrap {
+    position: relative;
     flex: 1 0 auto;
   }
 }

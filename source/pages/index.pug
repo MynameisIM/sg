@@ -1,7 +1,9 @@
 extends ../layouts/main.pug
+include ../blocks/main-block/main-block.pug
 
 block vars
   - var indexPage = require('../data/indexPage.json');
 
 block content
   main.main
+    +main-block()

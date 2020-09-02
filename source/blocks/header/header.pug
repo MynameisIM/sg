@@ -12,4 +12,5 @@ mixin header(data)
         each item in data.social
           a.header__social(href=item.href)
             +svg(item.icon)
-      .header__lang
+      a.header__lang.header__lang--ru(href='#')
+        span RU

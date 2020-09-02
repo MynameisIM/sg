@@ -8,4 +8,5 @@ mixin footer(data)
         each item in data.social
           a.footer__social(href=item.href)
             +svg(item.icon)
-      .footer__lang
+      a.footer__lang.footer__lang--ru(href='#')
+        span RU
