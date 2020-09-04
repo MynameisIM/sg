@@ -1,5 +1,7 @@
 extends ../layouts/main.pug
 include ../blocks/main-block/main-block.pug
+include ../blocks/video/video.pug
+include ../blocks/club-values/club-values.pug
 
 block vars
   - var indexPage = require('../data/indexPage.json');
@@ -7,3 +9,5 @@ block vars
 block content
   main.main
     +main-block()
+    +video()
+    +club-values()

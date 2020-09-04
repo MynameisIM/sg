@@ -1,0 +1,60 @@
+$parent: video;
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+  height: rem(667);
+
+  @media (min-width: 768px) {
+    height: rem(1024);
+  }
+
+  @media (min-width: 1280px) {
+    height: rem(800);
+  }
+
+  @include element($parent, 'box') {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include element($parent, 'preview') {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element($parent, 'preview-text') {
+    position: relative;
+    font-size: rem(14);
+    line-height: rem(17);
+    color: $gray;
+    margin-bottom: rem(-42);
+  }
+
+  @include element($parent, 'preview-button') {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-left: 36px solid #fff;
+    border-bottom: 20px solid transparent;
+    margin-bottom: rem(25);
+  }
+}
