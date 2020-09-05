@@ -1,0 +1,5 @@
+$parent: past-event;
+
+@include block($parent) {
+  width: 100%;
+}

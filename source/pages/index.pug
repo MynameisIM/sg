@@ -2,6 +2,9 @@ extends ../layouts/main.pug
 include ../blocks/main-block/main-block.pug
 include ../blocks/video/video.pug
 include ../blocks/club-values/club-values.pug
+include ../blocks/mentors/mentors.pug
+include ../blocks/events/events.pug
+include ../blocks/past-event/past-event.pug
 
 block vars
   - var indexPage = require('../data/indexPage.json');
@@ -11,3 +14,6 @@ block content
     +main-block()
     +video()
     +club-values()
+    +mentors()
+    +events()
+    +past-event()

@@ -1,0 +1,72 @@
+$parent: mentors;
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+  background-image: url("/assets/images/mentor-bg.jpg");
+
+  @include element($parent, 'title') {
+    font-weight: 900;
+    font-size: rem(36);
+    line-height: rem(44);
+    text-align: center;
+
+    @media (min-width: 768px) {
+      font-size: rem(52);
+      line-height: rem(64);
+    }
+
+    @media (min-width: 1024px) {
+      font-size: rem(60);
+      line-height: rem(72);
+    }
+  }
+
+  @include element($parent, 'image-box') {
+    border: 16px solid #fff;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element($parent, 'name') {
+    font-weight: 900;
+    font-size: rem(18);
+    line-height: rem(22);
+
+    @media (min-width: 768px) {
+      font-size: rem(26);
+      line-height: rem(32);
+    }
+
+    @media (min-width: 1024px) {
+      font-size: rem(32);
+      line-height: rem(38);
+    }
+  }
+
+  @include element($parent, 'position') {
+    font-weight: 800;
+    font-size: rem(14);
+    line-height: rem(18);
+
+    @media (min-width: 768px) {
+      font-size: rem(18);
+      line-height: rem(24);
+    }
+  }
+
+  @include element($parent, 'text') {
+    font-size: rem(14);
+    line-height: rem(18);
+
+    @media (min-width: 768px) {
+      font-size: rem(18);
+      line-height: rem(24);
+    }
+  }
+}

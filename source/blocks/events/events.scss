@@ -1,0 +1,59 @@
+$parent: events;
+
+@include block($parent) {
+  background-color: #242628;
+
+  @include element($parent, 'title') {
+    font-weight: 900;
+    font-size: rem(36);
+    line-height: rem(44);
+
+    @media (min-width: 768px) {
+      font-size: rem(52);
+      line-height: rem(64);
+    }
+
+    @media (min-width: 1024px) {
+      font-size: rem(60);
+      line-height: rem(72);
+    }
+  }
+
+  @include element($parent, 'item-title') {
+    font-weight: 900;
+    font-size: rem(18);
+    line-height: rem(22);
+
+    @media (min-width: 768px) {
+      font-size: rem(26);
+      line-height: rem(32);
+    }
+
+    @media (min-width: 1024px) {
+      font-size: rem(32);
+      line-height: rem(38);
+    }
+  }
+
+  @include element($parent, 'item-date') {
+    font-weight: 800;
+    font-size: rem(14);
+    line-height: rem(18);
+
+    @media (min-width: 768px) {
+      font-size: rem(18);
+      line-height: rem(24);
+    }
+
+    @media (min-width: 1024px) {
+      font-size: rem(32);
+      line-height: rem(38);
+    }
+  }
+
+  @include element($parent, 'button') {
+    font-weight: 900;
+    font-size: rem(14);
+    line-height: rem(17);
+  }
+}
