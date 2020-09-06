@@ -12,6 +12,14 @@ export default class Mentors {
 
     this.fl.on('change', () => {
       this.constructor.setClasses(this.fl.selectedIndex, slides);
+
+      if (this.fl.velocity < 0) {
+        wrapper.classList.add('forwards');
+        wrapper.classList.remove('backwards');
+      } else {
+        wrapper.classList.add('backwards');
+        wrapper.classList.remove('forwards');
+      }
     });
 
     this.constructor.setClasses(this.fl.selectedIndex, slides);
