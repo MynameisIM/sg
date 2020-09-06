@@ -1,0 +1,200 @@
+$parent: entry-terms;
+
+@include block($parent) {
+  width: 100%;
+  padding: rem(80) rem(15);
+  background-color: $white;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: rem(120) rem(15);
+  }
+
+  @include element($parent, 'title') {
+    font-weight: 900;
+    font-size: rem(36);
+    line-height: rem(44);
+    text-align: center;
+    margin-bottom: rem(32);
+
+    @media (min-width: 768px) {
+      font-size: rem(52);
+      line-height: rem(64);
+      margin-bottom: rem(56);
+    }
+
+    @media (min-width: 1024px) {
+      font-size: rem(60);
+      line-height: rem(72);
+    }
+  }
+
+  @include element($parent, 'item-title') {
+    font-weight: 900;
+    font-size: rem(18);
+    line-height: rem(22);
+    margin-bottom: rem(4);
+
+    @media (min-width: 768px) {
+      font-size: rem(32);
+      line-height: rem(38);
+      margin-bottom: rem(8);
+    }
+  }
+
+  @include element($parent, 'item-text') {
+    font-size: rem(14);
+    line-height: rem(18);
+
+    @media (min-width: 768px) {
+      font-size: rem(18);
+      line-height: rem(24);
+    }
+  }
+
+  @include element($parent, 'list') {
+    text-align: left;
+
+    @media (min-width: 768px) {
+      max-width: rem(570);
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: rem(770);
+    }
+
+    @media (min-width: 1280px) {
+      max-width: rem(730);
+    }
+  }
+
+  @include element($parent, 'item') {
+    position: relative;
+    height: rem(430);
+    text-align: center;
+    color: $gray-24;
+    padding: rem(32);
+    background-color: $gray-f2;
+    margin-bottom: rem(80);
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      height: rem(658);
+      padding: rem(40) rem(60);
+      margin-bottom: rem(120);
+    }
+
+    @media (min-width: 1024px) {
+      height: rem(500);
+      padding: rem(40) rem(80);
+    }
+
+    &:nth-child(odd) {
+      background-color: $gray-24;
+
+      @include element($parent, 'item-title') {
+        color: $white;
+      }
+
+      @include element($parent, 'item-text') {
+        color: $gray;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(1) {
+      @include element($parent, 'image-box') {
+        bottom: rem(30);
+
+        @media (min-width: 768px) {
+          bottom: rem(85);
+        }
+
+        @media (min-width: 1024px) {
+          bottom: 0;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      @include element($parent, 'image-box') {
+        img {
+          @media (min-width: 768px) {
+            width: 85%;
+          }
+
+          @media (min-width: 1024px) {
+            width: 65%;
+          }
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      @include element($parent, 'image-box') {
+        height: 100%;
+
+        picture {
+          height: 100%;
+
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      @include element($parent, 'image-box') {
+        img {
+          @media (min-width: 768px) {
+            width: 95%;
+          }
+
+          @media (min-width: 1024px) {
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'image-box') {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+
+      @media (min-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  @include element($parent, 'button') {
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: rem(17);
+    color: $white;
+    background-color: $blue;
+    text-transform: uppercase;
+    padding: rem(20) rem(46);
+    border-radius: rem(25);
+    margin-top: rem(32);
+    letter-spacing: -1px;
+
+    @media (min-width: 768px) {
+      margin-top: rem(56);
+    }
+  }
+}

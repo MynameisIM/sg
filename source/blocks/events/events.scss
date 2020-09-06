@@ -1,16 +1,29 @@
 $parent: events;
 
 @include block($parent) {
-  background-color: #242628;
+  padding: rem(80) rem(15);
+  background-color: $gray-24;
+
+  @media (min-width: 768px) {
+    padding: rem(121) rem(39);
+  }
+
+  @media (min-width: 1024px) {
+    padding: rem(121) rem(47);
+  }
 
   @include element($parent, 'title') {
     font-weight: 900;
     font-size: rem(36);
     line-height: rem(44);
+    color: $white;
+    text-align: center;
+    margin-bottom: rem(32);
 
     @media (min-width: 768px) {
       font-size: rem(52);
       line-height: rem(64);
+      margin-bottom: rem(55);
     }
 
     @media (min-width: 1024px) {
@@ -19,19 +32,81 @@ $parent: events;
     }
   }
 
+  @include element($parent, 'list') {
+    text-align: center;
+
+    @media (min-width: 1280px) {
+      max-width: rem(920);
+      margin: 0 auto;
+    }
+  }
+
+  @include element($parent, 'item') {
+    display: block;
+    width: 100%;
+    background: #fff;
+    padding: rem(24);
+    margin-bottom: rem(16);
+    border-radius: 2px;
+    color: $gray-24;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(32);
+    }
+
+    @media (min-width: 1024px) {
+      align-items: flex-start;
+    }
+
+    img {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+        width: rem(112);
+        height: rem(112);
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+      }
+
+      @media (min-width: 1024px) {
+        width: rem(86);
+        height: rem(86);
+      }
+    }
+  }
+
+  @include element($parent, 'item-wrapper') {
+    @media (min-width: 768px) {
+      width: calc(100% - 112px);
+      padding: rem(8) 0 0 rem(32);
+    }
+  }
+
   @include element($parent, 'item-title') {
+    display: block;
+    height: rem(44);
     font-weight: 900;
     font-size: rem(18);
     line-height: rem(22);
+    margin-bottom: 3px;
+    overflow: hidden;
+    letter-spacing: 0.2px;
 
     @media (min-width: 768px) {
+      height: rem(70);
       font-size: rem(26);
       line-height: rem(32);
     }
 
     @media (min-width: 1024px) {
+      height: auto;
       font-size: rem(32);
       line-height: rem(38);
+      margin-bottom: rem(8);
     }
   }
 
@@ -39,21 +114,28 @@ $parent: events;
     font-weight: 800;
     font-size: rem(14);
     line-height: rem(18);
+    letter-spacing: -0.1px;
 
     @media (min-width: 768px) {
       font-size: rem(18);
       line-height: rem(24);
     }
-
-    @media (min-width: 1024px) {
-      font-size: rem(32);
-      line-height: rem(38);
-    }
   }
 
   @include element($parent, 'button') {
-    font-weight: 900;
+    font-weight: 700;
     font-size: rem(14);
     line-height: rem(17);
+    color: $white;
+    background-color: $blue;
+    text-transform: uppercase;
+    padding: rem(20) rem(46);
+    border-radius: rem(25);
+    margin-top: rem(16);
+    letter-spacing: -1px;
+
+    @media (min-width: 768px) {
+      margin-top: rem(24);
+    }
   }
 }

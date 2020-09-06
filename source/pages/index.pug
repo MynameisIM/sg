@@ -5,6 +5,8 @@ include ../blocks/club-values/club-values.pug
 include ../blocks/mentors/mentors.pug
 include ../blocks/events/events.pug
 include ../blocks/past-event/past-event.pug
+include ../blocks/entry-terms/entry-terms.pug
+include ../blocks/contacts/contacts.pug
 
 block vars
   - var indexPage = require('../data/indexPage.json');
@@ -17,3 +19,5 @@ block content
     +mentors()
     +events()
     +past-event()
+    +entry-terms()
+    +contacts()

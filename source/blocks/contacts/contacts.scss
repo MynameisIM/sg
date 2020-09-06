@@ -1,0 +1,135 @@
+$parent: contacts;
+
+@include block($parent) {
+  width: 100%;
+  background-color: $gray-24;
+  padding: rem(80) rem(15);
+
+  @media (min-width: 768px) {
+    padding: rem(120) rem(15);
+  }
+
+  @include element($parent, 'title') {
+    font-weight: 900;
+    font-size: rem(36);
+    line-height: rem(44);
+    color: $white;
+    text-align: center;
+    margin-bottom: rem(30);
+
+    @media (min-width: 768px) {
+      font-size: rem(60);
+      line-height: rem(72);
+      margin-bottom: rem(55);
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: rem(80);
+    }
+
+    @media (min-width: 1280px) {
+      margin-bottom: rem(124);
+    }
+  }
+
+  @include element($parent, 'container') {
+    @media (min-width: 768px) {
+      max-width: rem(450);
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: rem(540);
+    }
+  }
+
+  @include element($parent, 'box') {
+    background-color: $white;
+    border-radius: 2px;
+    padding: rem(16);
+
+    @media (min-width: 768px) {
+      padding: rem(24);
+    }
+  }
+
+  @include element($parent, 'image-box') {
+    width: 100%;
+    height: rem(190);
+
+    @media (min-width: 768px) {
+      height: rem(245);
+    }
+
+    @media (min-width: 1280px) {
+      height: rem(300);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element($parent, 'box-title') {
+    font-weight: 900;
+    font-size: rem(18);
+    line-height: rem(22);
+    margin-bottom: rem(3);
+
+    @media (min-width: 768px) {
+      font-size: rem(32);
+      line-height: rem(38);
+      margin-bottom: rem(8);
+    }
+  }
+
+  @include element($parent, 'info') {
+    padding: rem(17) rem(8) rem(8);
+
+    @media (min-width: 768px) {
+      padding: rem(23) rem(16) rem(16);
+    }
+  }
+
+  @include element($parent, 'box-row') {
+    margin-bottom: rem(3);
+
+    @media (min-width: 768px) {
+      margin-bottom: rem(8);
+    }
+
+    span,
+    a {
+      font-size: rem(14);
+      line-height: rem(18);
+      color: $gray-24;
+
+      @media (min-width: 768px) {
+        font-size: rem(18);
+        line-height: rem(24);
+      }
+    }
+
+    span {
+      &:first-child {
+        padding-right: rem(3);
+      }
+    }
+  }
+
+  @include element($parent, 'open-link') {
+    display: inline-block;
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: rem(17);
+    color: $blue;
+    margin-top: rem(12);
+
+    @media (min-width: 768px) {
+      margin-top: rem(16);
+    }
+  }
+}

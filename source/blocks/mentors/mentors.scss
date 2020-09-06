@@ -4,26 +4,84 @@ $parent: mentors;
   position: relative;
   width: 100%;
   background-image: url("/assets/images/mentor-bg.jpg");
+  padding: rem(81) 0 rem(73);
+
+  @media (min-width: 768px) {
+    padding: rem(121) 0 rem(73);
+  }
 
   @include element($parent, 'title') {
     font-weight: 900;
     font-size: rem(36);
     line-height: rem(44);
     text-align: center;
+    margin-bottom: rem(31);
 
     @media (min-width: 768px) {
       font-size: rem(52);
       line-height: rem(64);
+      margin-bottom: rem(63);
     }
 
     @media (min-width: 1024px) {
       font-size: rem(60);
       line-height: rem(72);
+      margin-bottom: rem(55);
+    }
+  }
+
+  @include element($parent, 'container') {
+    margin: 0 rem(39);
+    overflow: hidden;
+    padding-bottom: rem(80);
+
+    @media (min-width: 768px) {
+      padding-bottom: rem(47);
+    }
+
+    @media (min-width: 1024px) {
+      max-width: rem(770);
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: rem(730);
+    }
+  }
+
+  @include element($parent, 'wrapper') {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  @include element($parent, 'slide') {
+    width: 100%;
+    flex-shrink: 0;
+
+    @media (min-width: 768px) {
+      display: flex;
     }
   }
 
   @include element($parent, 'image-box') {
+    height: rem(297);
     border: 16px solid #fff;
+    margin-bottom: rem(16);
+
+    @media (min-width: 768px) {
+      width: 48%;
+      height: rem(410);
+      border-width: 24px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 1024px) {
+      height: rem(460);
+    }
+
+    @media (min-width: 1280px) {
+      height: rem(432);
+    }
 
     img {
       width: 100%;
@@ -33,14 +91,23 @@ $parent: mentors;
     }
   }
 
+  @include element($parent, 'info') {
+    @media (min-width: 768px) {
+      width: 52%;
+      padding: rem(32) rem(20) 0 rem(29);
+    }
+  }
+
   @include element($parent, 'name') {
     font-weight: 900;
     font-size: rem(18);
     line-height: rem(22);
+    margin-bottom: rem(4);
 
     @media (min-width: 768px) {
       font-size: rem(26);
       line-height: rem(32);
+      margin-bottom: rem(8);
     }
 
     @media (min-width: 1024px) {
@@ -53,10 +120,12 @@ $parent: mentors;
     font-weight: 800;
     font-size: rem(14);
     line-height: rem(18);
+    margin-bottom: rem(8);
 
     @media (min-width: 768px) {
       font-size: rem(18);
       line-height: rem(24);
+      margin-bottom: rem(16);
     }
   }
 
