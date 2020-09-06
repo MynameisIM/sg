@@ -43,6 +43,7 @@ $parent: mentors;
       left: 34%;
       right: auto;
       color: $white;
+      transition: transform 0.2s linear;
 
       @media (min-width: 768px) {
         top: 87%;
@@ -52,6 +53,12 @@ $parent: mentors;
       @media (min-width: 1024px) {
         top: 89%;
         left: 52%;
+      }
+
+      @media (min-width: 1280px) {
+        &:hover {
+          transform: translateY(-50%) scale(1.2);
+        }
       }
 
       &.next {

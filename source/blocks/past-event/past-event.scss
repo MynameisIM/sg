@@ -47,6 +47,7 @@ $parent: past-event;
       left: 36%;
       right: auto;
       color: $white;
+      transition: transform 0.2s linear;
 
       @media (min-width: 768px) {
         top: 109%;
@@ -61,6 +62,10 @@ $parent: past-event;
       @media (min-width: 1280px) {
         top: 112%;
         left: 47%;
+
+        &:hover {
+          transform: translateY(-50%) scale(1.2);
+        }
       }
 
       &.next {
