@@ -35,6 +35,44 @@ $parent: mentors;
     overflow: hidden;
     padding-bottom: rem(80);
 
+    .flickity-button {
+      top: 110%;
+      width: rem(40);
+      height: rem(40);
+      background-color: $gray-24;
+      left: 34%;
+      right: auto;
+      color: $white;
+
+      @media (min-width: 768px) {
+        top: 87%;
+        left: 53%;
+      }
+
+      @media (min-width: 1024px) {
+        top: 89%;
+        left: 52%;
+      }
+
+      &.next {
+        left: 53%;
+
+        @media (min-width: 768px) {
+          left: 60%;
+        }
+
+        @media (min-width: 1024px) {
+          left: 59%;
+        }
+      }
+
+      svg {
+        left: 32%;
+        width: 40%;
+        height: 60%;
+      }
+    }
+
     @media (min-width: 768px) {
       padding-bottom: rem(47);
     }
@@ -50,13 +88,21 @@ $parent: mentors;
   }
 
   @include element($parent, 'wrapper') {
-    display: flex;
-    overflow-x: auto;
+    .flickity-slider {
+      transform: translateX(0) !important;
+    }
   }
 
   @include element($parent, 'slide') {
     width: 100%;
     flex-shrink: 0;
+    left: 0 !important;
+    opacity: 0;
+
+    &.is-selected {
+      z-index: 1;
+      opacity: 1;
+    }
 
     @media (min-width: 768px) {
       display: flex;

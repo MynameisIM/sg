@@ -36,23 +36,51 @@ $parent: past-event;
     padding-bottom: rem(72);
 
     @media (min-width: 768px) {
-      max-width: 570px;
-      margin: 0 auto;
       padding-bottom: rem(100);
     }
 
-    @media (min-width: 1024px) {
-      max-width: 610px;
-    }
+    .flickity-button {
+      top: 114%;
+      width: rem(40);
+      height: rem(40);
+      background-color: $gray-24;
+      left: 36%;
+      right: auto;
+      color: $white;
 
-    @media (min-width: 1280px) {
-      max-width: 730px;
-    }
-  }
+      @media (min-width: 768px) {
+        top: 109%;
+        left: 44%;
+      }
 
-  @include element($parent, 'wrapper') {
-    display: flex;
-    overflow-x: auto;
+      @media (min-width: 1024px) {
+        top: 114%;
+        left: 45%;
+      }
+
+      @media (min-width: 1280px) {
+        top: 112%;
+        left: 47%;
+      }
+
+      &.next {
+        left: 52%;
+
+        @media (min-width: 768px) {
+          left: 51%;
+        }
+
+        @media (min-width: 1024px) {
+          left: 51%;
+        }
+      }
+
+      svg {
+        left: 32%;
+        width: 40%;
+        height: 60%;
+      }
+    }
   }
 
   @include element($parent, 'slide') {
@@ -60,9 +88,28 @@ $parent: past-event;
     flex-shrink: 0;
     padding: rem(16) rem(16) rem(23);
     background-color: $white;
+    margin: 0 rem(5);
 
     @media (min-width: 768px) {
+      width: 74%;
       padding: rem(24) rem(24) rem(40);
+      margin: 0;
+      transform: scale(0.9);
+      transition: transform 0.2s linear;
+    }
+
+    @media (min-width: 1024px) {
+      width: 60%;
+    }
+
+    @media (min-width: 1280px) {
+      width: 50%;
+    }
+
+    &.is-selected {
+      @media (min-width: 768px) {
+        transform: scale(1);
+      }
     }
   }
 

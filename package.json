@@ -7,6 +7,7 @@
     "@babel/polyfill": "^7.10.4",
     "custom-event-polyfill": "^1.0.7",
     "es6-promise-polyfill": "^1.2.0",
+    "flickity": "^2.2.1",
     "lazysizes": "^5.1.2",
     "object-fit-images": "^3.2.4",
     "svgxuse": "^1.2.6",
