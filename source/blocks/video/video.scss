@@ -56,5 +56,13 @@ $parent: video;
     border-left: 36px solid #fff;
     border-bottom: 20px solid transparent;
     margin-bottom: rem(25);
+    left: rem(4);
+    transition: transform 0.3s linear;
+
+    @media (min-width: 1280px) {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 }

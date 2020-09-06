@@ -64,6 +64,8 @@ $parent: footer;
     svg {
       width: rem(25);
       height: rem(25);
+      fill: $gray;
+      transition: fill 0.3s linear;
     }
 
     @media (min-width: 768px) {
@@ -72,6 +74,14 @@ $parent: footer;
 
     @media (min-width: 1024px) {
       margin: 0 rem(4);
+    }
+
+    @media (min-width: 1280px) {
+      &:hover {
+        svg {
+          fill: $white;
+        }
+      }
     }
   }
 
@@ -88,6 +98,8 @@ $parent: footer;
       background-repeat: no-repeat;
       color: $white;
       margin-left: rem(25);
+      opacity: 0.6;
+      transition: opacity 0.3s linear;
     }
 
     @media (min-width: 1024px) {
@@ -96,6 +108,10 @@ $parent: footer;
 
     @media (min-width: 1280px) {
       margin-left: rem(30);
+
+      &:hover {
+        opacity: 1;
+      }
     }
 
     @include modifier($parent, 'ru') {

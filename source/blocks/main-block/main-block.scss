@@ -90,6 +90,23 @@ $parent: main-block;
       padding: rem(20) rem(45);
       margin-bottom: rem(70);
     }
+
+    @media (min-width: 1280px) {
+      transition: transform 0.3s linear;
+
+      span {
+        display: inline-block;
+        transition: transform 0.3s linear;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+
+        span {
+          transform: scale(0.95);
+        }
+      }
+    }
   }
 
   @include element($parent, 'keyhole') {
