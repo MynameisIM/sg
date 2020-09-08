@@ -42,6 +42,8 @@ $parent: main-block;
     font-size: rem(32);
     color: $white;
     margin-bottom: rem(15);
+    opacity: 0;
+    animation: slUp 0.2s 1s linear forwards;
 
     @media (min-width: 768px) {
       font-size: rem(64);
@@ -64,6 +66,8 @@ $parent: main-block;
     font-size: rem(18);
     color: $gray;
     margin-bottom: rem(50);
+    opacity: 0;
+    animation: slUp 0.2s 1.1s linear forwards;
 
     @media (min-width: 768px) {
       font-size: rem(24);
@@ -85,6 +89,8 @@ $parent: main-block;
     border-radius: rem(25);
     padding: rem(19) rem(45);
     margin-bottom: rem(30);
+    opacity: 0;
+    animation: slUp 0.2s 1.2s linear forwards;
 
     @media (min-width: 768px) {
       padding: rem(20) rem(45);
@@ -117,9 +123,23 @@ $parent: main-block;
     left: 50%;
     transform: translateX(-50%);
     background-image: url('/assets/images/keyhole.png');
+    opacity: 0;
+    animation: slUp 0.2s 1.3s linear forwards;
 
     @media (min-width: 768px) {
       bottom: rem(96);
     }
+  }
+}
+
+@keyframes slUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
