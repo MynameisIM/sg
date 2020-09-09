@@ -43,6 +43,7 @@ $parent: club-values;
 
     @media (min-width: 1280px) {
       max-width: rem(730);
+      margin-bottom: 200px;
     }
 
     &:last-of-type {
@@ -64,7 +65,8 @@ $parent: club-values;
       }
 
       @media (min-width: 1280px) {
-        height: rem(405);
+        height: rem(455);
+        margin-bottom: 100px;
       }
     }
   }
@@ -79,6 +81,7 @@ $parent: club-values;
     left: 50%;
     bottom: 24px;
     transform: translateX(-50%);
+    margin-bottom: 45px;
 
     @media (min-width: 768px) {
       font-size: rem(26);
@@ -89,10 +92,16 @@ $parent: club-values;
     @media (min-width: 1024px) {
       font-size: rem(32);
       line-height: rem(38);
+      margin-bottom: 65px;
     }
   }
 
   @include element($parent, 'section-text') {
-    display: none;
+    position: relative;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #b2b3b4;
+    margin-bottom: 100px;
   }
 }

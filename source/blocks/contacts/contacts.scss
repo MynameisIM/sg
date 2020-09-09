@@ -33,6 +33,9 @@ $parent: contacts;
   }
 
   @include element($parent, 'container') {
+    opacity: 0;
+    transform: translateY(50%);
+
     @media (min-width: 768px) {
       max-width: rem(450);
       margin: 0 auto;

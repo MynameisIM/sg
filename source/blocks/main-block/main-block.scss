@@ -4,13 +4,14 @@ $parent: main-block;
   position: relative;
   width: 100%;
   height: rem(667);
+  z-index: 1;
 
   @media (min-width: 768px) {
     height: rem(1024);
   }
 
   @media (min-width: 1280px) {
-    height: rem(800);
+    height: 100vh;
   }
 
   @include element($parent, 'background') {
@@ -129,6 +130,15 @@ $parent: main-block;
     @media (min-width: 768px) {
       bottom: rem(96);
     }
+  }
+
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 35.4%;
+    left: 11px;
+    opacity: 0;
   }
 }
 

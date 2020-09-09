@@ -10,7 +10,7 @@ $parent: video;
   }
 
   @media (min-width: 1280px) {
-    height: rem(800);
+    height: 100vh;
   }
 
   @include element($parent, 'box') {
